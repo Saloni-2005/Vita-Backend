@@ -88,6 +88,10 @@ const verifyAdmin = async (req, res, next) => {
   }
 };
 
+app.get('/', (req, res) => {
+  res.status(200).send('🚀 Vita AI Backend is running!');
+});
+
 // Get Current User Role (GET)
 app.get('/api/user/role', verifyToken, async (req, res) => {
   const role = await getUserRole(req.user.email);
